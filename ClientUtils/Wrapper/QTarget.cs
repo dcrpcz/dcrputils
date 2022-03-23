@@ -1,7 +1,7 @@
 ﻿using System;
 using CitizenFX.Core;
 
-namespace ClientUtils.Wrapper
+namespace DiamondCrew.FiveM.Utils.Wrapper
 {
     public struct QTarget
     {

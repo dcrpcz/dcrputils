@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ClientUtils")]
+[assembly: AssemblyTitle("DiamondCrew.FiveM.Utils.Client")]
 [assembly: AssemblyDescription("Utilities for easier FiveM Client development in C#.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("DiamondCrew")]
-[assembly: AssemblyProduct("ClientUtils")]
+[assembly: AssemblyProduct("DiamondCrew.FiveM.Utils.Client")]
 [assembly: AssemblyCopyright("Copyright © DiamondCrew 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
+    <id>DiamondCrew.FiveM.Utils.Client</id>
+    <version>1.0.2</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <!-- <icon>icon.png</icon> -->
     <projectUrl>https://diamondcrew.cz</projectUrl>
-    <repository type="git" url="https://github.com/dcrp/dcrputils" />
+    <repository type="git" url="https://github.com/dcrpcz/dcrputils" />
     <description>$description$</description>
-    <releaseNotes>initial release</releaseNotes>
+    <releaseNotes>wrapper name change</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>diamondcrew dcrp</tags>
     <dependencies>
