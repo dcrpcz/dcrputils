@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>DiamondCrew.FiveM.Utils.Client</id>
-    <version>1.0.2</version>
+    <version>$version$</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -11,9 +11,9 @@
     <projectUrl>https://diamondcrew.cz</projectUrl>
     <repository type="git" url="https://github.com/dcrpcz/dcrputils" />
     <description>$description$</description>
-    <releaseNotes>wrapper name change</releaseNotes>
+    <releaseNotes>Added DiamondScript abstract class.</releaseNotes>
     <copyright>$copyright$</copyright>
-    <tags>diamondcrew dcrp</tags>
+    <tags>diamondcrew dcrp client</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.8" />
     </dependencies>

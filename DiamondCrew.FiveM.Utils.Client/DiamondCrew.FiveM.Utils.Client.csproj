@@ -7,8 +7,8 @@
     <ProjectGuid>{0C3FBEDA-3FAE-4AD9-A2AC-4E48F2121522}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClientUtils</RootNamespace>
-    <AssemblyName>ClientUtils</AssemblyName>
+    <RootNamespace>DiamondCrew.FiveM.Utils.Client</RootNamespace>
+    <AssemblyName>DiamondCrew.FiveM.Utils.Client</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientUtils.cs" />
+    <Compile Include="DiamondScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrapper\QTarget.cs" />
   </ItemGroup>
