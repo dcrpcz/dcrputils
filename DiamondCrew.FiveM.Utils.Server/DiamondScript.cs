@@ -1,5 +1,6 @@
 ﻿using System;
 using CitizenFX.Core;
+using CitizenFX.Core.Native;
 
 namespace DiamondCrew.FiveM.Utils.Server
 {
@@ -15,8 +16,20 @@ namespace DiamondCrew.FiveM.Utils.Server
         protected abstract void OnStop();
         private void SetupListeners()
         {
-            EventHandlers["onResourceStart"] += new Action(OnStart);
-            EventHandlers["onResourceStop"] += new Action(OnStop);
+            EventHandlers["onResourceStart"] += new Action<string>(resourceName =>
+            {
+                if (resourceName == API.GetCurrentResourceName())
+                {
+                    OnStart();
+                }
+            });
+            EventHandlers["onResourceStop"] += new Action<string>(resourceName =>
+            {
+                if (resourceName == API.GetCurrentResourceName())
+                {
+                    OnStop();
+                }
+            });
         }
     }
 }
