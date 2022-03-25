@@ -29,7 +29,7 @@ jobs:
         
       - name: pack client
         run: |
-          cd $GITHUB_WORKSPACE\DiamondCrew.FiveM.Utils.Client
+          cd DiamondCrew.FiveM.Utils.Client
           nuget pack -OutputFileNamesWithoutVersion -OutputDirectory $GITHUB_WORKSPACE
       
       - name: publish client
@@ -38,7 +38,7 @@ jobs:
     
       - name: pack server
         run: |
-          cd $GITHUB_WORKSPACE\DiamondCrew.FiveM.Utils.Server
+          cd DiamondCrew.FiveM.Utils.Server
           nuget pack -OutputFileNamesWithoutVersion -OutputDirectory $GITHUB_WORKSPACE
         
       - name: publish server
