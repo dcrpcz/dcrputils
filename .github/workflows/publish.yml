@@ -30,16 +30,16 @@ jobs:
       - name: pack client
         run: |
           cd DiamondCrew.FiveM.Utils.Client
-          nuget pack -OutputFileNamesWithoutVersion -OutputDirectory $GITHUB_WORKSPACE
+          nuget pack -OutputFileNamesWithoutVersion -OutputDirectory ${{ GITHUB_WORKSPACE }}
       
       - name: publish client
         run: |
-          nuget push $GITHUB_WORKSPACE\DiamondCrew.FiveM.Utils.Client.nupkg -Source https://api.nuget.org/v3/index.json
+          nuget push ${{ GITHUB_WORKSPACE }}\DiamondCrew.FiveM.Utils.Client.nupkg -Source https://api.nuget.org/v3/index.json
     
       - name: pack server
         run: |
           cd DiamondCrew.FiveM.Utils.Server
-          nuget pack -OutputFileNamesWithoutVersion -OutputDirectory $GITHUB_WORKSPACE
+          nuget pack -OutputFileNamesWithoutVersion -OutputDirectory ${{ GITHUB_WORKSPACE }}
         
       - name: publish server
-        run: nuget push $GITHUB_WORKSPACE\DiamondCrew.FiveM.Utils.Server.nupkg -Source https://api.nuget.org/v3/index.json
+        run: nuget push ${{ GITHUB_WORKSPACE }}\DiamondCrew.FiveM.Utils.Server.nupkg -Source https://api.nuget.org/v3/index.json
