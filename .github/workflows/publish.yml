@@ -6,6 +6,7 @@ on:
 
 jobs:
   publish:
+    if: "!contains(github.event.commits[0].message, '[ci-skip]')"
     name: build, pack & publish
     runs-on: windows-latest
     steps:
@@ -36,7 +37,7 @@ jobs:
       - name: navigate to workspace
         run: cd $GITHUB_WORKSPACE
     
-      - name: pack server
+      - name: pack & publish server
         run: |
           cd DiamondCrew.FiveM.Utils.Server
           nuget pack -OutputFileNamesWithoutVersion
