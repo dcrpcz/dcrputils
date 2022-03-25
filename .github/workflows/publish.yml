@@ -30,17 +30,17 @@ jobs:
       - name: pack client
         run: |
           cd DiamondCrew.FiveM.Utils.Client
-          nuget pack
+          nuget pack -OutputFileNamesWithoutVersion
       
       - name: publish client
         run: |
-          nuget push *.nupkg -Source https://api.nuget.org/v3/index.json
+          nuget push DiamondCrew.FiveM.Utils.Client.nupkg -Source https://api.nuget.org/v3/index.json
           cd ..
     
       - name: pack server
         run: |
           cd DiamondCrew.FiveM.Utils.Server
-          nuget pack
+          nuget pack -OutputFileNamesWithoutVersion
         
       - name: publish server
-        run: nuget push *.nupkg -Source https://api.nuget.org/v3/index.json
+        run: nuget push DiamondCrew.FiveM.Utils.Server.nupkg -Source https://api.nuget.org/v3/index.json
