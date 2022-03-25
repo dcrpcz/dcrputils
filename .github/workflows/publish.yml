@@ -27,19 +27,17 @@ jobs:
       - name: build solution
         run: msbuild.exe DCRPUtils.sln /p:configuration="Release"
         
-      - name: pack client
+      - name: pack & publish client
         run: |
           cd DiamondCrew.FiveM.Utils.Client
-          nuget pack -OutputFileNamesWithoutVersion -OutputDirectory ${{ env.GITHUB_WORKSPACE }}
-      
-      - name: publish client
-        run: |
-          nuget push ${{ env.GITHUB_WORKSPACE }}\DiamondCrew.FiveM.Utils.Client.nupkg -Source https://api.nuget.org/v3/index.json
+          nuget pack -OutputFileNamesWithoutVersion
+          nuget push DiamondCrew.FiveM.Utils.Client.nupkg -Source https://api.nuget.org/v3/index.json
+
+      - name: navigate to workspace
+        run: cd $GITHUB_WORKSPACE
     
       - name: pack server
         run: |
           cd DiamondCrew.FiveM.Utils.Server
-          nuget pack -OutputFileNamesWithoutVersion -OutputDirectory ${{ env.GITHUB_WORKSPACE }}
-        
-      - name: publish server
-        run: nuget push ${{ env.GITHUB_WORKSPACE }}\DiamondCrew.FiveM.Utils.Server.nupkg -Source https://api.nuget.org/v3/index.json
+          nuget pack -OutputFileNamesWithoutVersion
+          nuget push DiamondCrew.FiveM.Utils.Server.nupkg -Source https://api.nuget.org/v3/index.json
