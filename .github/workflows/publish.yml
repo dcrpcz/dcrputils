@@ -7,22 +7,40 @@ on:
 jobs:
   publish:
     name: build, pack & publish
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: nuget/setup-nuget@v1.0.5
+        with:
+          nuget-api-key: ${{ secrets.NUGET_KEY }}
+          nuget-version: 'latest'
+      
+      - name: setup msbuild
+        uses: microsoft/setup-msbuild@v1
 
+      - name: navigate to workspace
+        run: cd $GITHUB_WORKSPACE
+        
+      - name: restore packages
+        run: nuget restore DCRPUtils.sln
+        
+      - name: build solution
+        run: msbuild.exe DCRPUtils.sln /p:configuration="Release"
+        
+      - name: pack client
+        run: |
+          cd DiamondCrew.FiveM.Utils.Client
+          nuget pack
+      
       - name: publish client
-        uses: rohith/publish-nuget@v2
-        with:
-          PACKAGE_NAME: DiamondCrew.FiveM.Utils.Client
-          PROJECT_FILE_PATH: DiamondCrew.FiveM.Utils.Client/DiamondCrew.FiveM.Utils.Client.csproj
-          NUGET_KEY: ${{ secrets.NUGET_KEY }}
-          
-      - name: publish server
-        uses: rohith/publish-nuget@v2
-        with:
-          PACKAGE_NAME: DiamondCrew.FiveM.Utils.Server
-          PROJECT_FILE_PATH: DiamondCrew.FiveM.Utils.Server/DiamondCrew.FiveM.Utils.Server.csproj
-          NUGET_KEY: ${{ secrets.NUGET_KEY }}
-
+        run: |
+          nuget push *.nupkg -Source https://api.nuget.org/v3/index.json
+          cd ..
     
+      - name: pack server
+        run: |
+          cd DiamondCrew.FiveM.Utils.Server
+          nuget pack
+        
+      - name: publish server
+        run: nuget push *.nupkg -Source https://api.nuget.org/v3/index.json
