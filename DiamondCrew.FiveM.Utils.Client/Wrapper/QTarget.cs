@@ -1,7 +1,7 @@
 ﻿using System;
 using CitizenFX.Core;
 
-namespace DiamondCrew.FiveM.Utils.Client.Wrapper
+namespace Client
 {
     public struct QTarget
     {
@@ -32,7 +32,7 @@ namespace DiamondCrew.FiveM.Utils.Client.Wrapper
 
     public struct QTargetOption
     {
-        public QTargetOption(string label, Action action)
+        public QTargetOption(string label, Action<int> action)
         {
             _label = label;
             _action = action;
@@ -41,9 +41,9 @@ namespace DiamondCrew.FiveM.Utils.Client.Wrapper
             _item = null;
         }
 
-        public QTargetOption(string label, string eventName) : this(label, () => BaseScript.TriggerEvent(eventName)) { }
+        public QTargetOption(string label, string eventName) : this(label, (entity) => BaseScript.TriggerEvent(eventName)) { }
 
-        public QTargetOption(string label, Action action, Action canInteract, string[] job, string item)
+        public QTargetOption(string label, Action<int> action, Action<int> canInteract, string[] job, string item)
         {
             _label = label;
             _action = action;
@@ -54,14 +54,14 @@ namespace DiamondCrew.FiveM.Utils.Client.Wrapper
 
         // Parameters
         private readonly string _label;
-        private readonly Action _action;
+        private readonly Action<int> _action;
 
         // Optional Parameters
-        private Action _canInteract;
+        private Action<int> _canInteract;
         private string[] _job;
         private string _item;
 
-        public QTargetOption WithCanInteract(Action canInteract)
+        public QTargetOption WithCanInteract(Action<int> canInteract)
         {
             this._canInteract = canInteract;
             return this;
