@@ -1,0 +1,35 @@
+name: Publish to NuGet
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  publish-client:
+    name: build, pack & publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: publish client
+        id: publish_nuget
+        uses: rohith/publish-nuget@v2
+        with:
+          PACKAGE_NAME: DiamondCrew.FiveM.Utils.Client
+          PROJECT_FILE_PATH: DiamondCrew.FiveM.Utils.Client/DiamondCrew.FiveM.Utils.Client.cs
+          NUGET_KEY: ${{ secrets.NUGET_KEY }}
+  
+  publish-server:
+    name: build, pack & publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: publish server
+        id: publish_nuget
+        uses: rohith/publish-nuget@v2
+        with:
+          PACKAGE_NAME: DiamondCrew.FiveM.Utils.Server
+          PROJECT_FILE_PATH: DiamondCrew.FiveM.Utils.Server/DiamondCrew.FiveM.Utils.Server.cs
+          NUGET_KEY: ${{ secrets.NUGET_KEY }}
+    
