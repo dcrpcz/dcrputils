@@ -12,7 +12,6 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: publish client
-        id: publish_nuget
         uses: rohith/publish-nuget@v2
         with:
           PACKAGE_NAME: DiamondCrew.FiveM.Utils.Client
@@ -20,7 +19,6 @@ jobs:
           NUGET_KEY: ${{ secrets.NUGET_KEY }}
           
       - name: publish server
-        id: publish_nuget
         uses: rohith/publish-nuget@v2
         with:
           PACKAGE_NAME: DiamondCrew.FiveM.Utils.Server
