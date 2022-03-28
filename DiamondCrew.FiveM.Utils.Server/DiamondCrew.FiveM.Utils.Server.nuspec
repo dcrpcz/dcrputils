@@ -14,7 +14,7 @@
     <copyright>$copyright$</copyright>
     <tags>diamondcrew dcrp server</tags>
     <dependencies>
-      <group targetFramework=".NETFramework4.8" />
+      <group targetFramework=".NETFramework4.5.2" />
     </dependencies>
   </metadata>
 </package>
