@@ -31,12 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CitizenFX.Core.Client, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\CitizenFX.Core.Client.1.0.5392\lib\net45\CitizenFX.Core.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,12 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiamondScript.cs" />
+    <Compile Include="ClientScript.cs" />
+    <Compile Include="Drawable\Drawable.cs" />
+    <Compile Include="Drawable\DrawableTask.cs" />
+    <Compile Include="Drawable\Text\DrawableText.cs" />
+    <Compile Include="Drawable\Text\Subtitle.cs" />
+    <Compile Include="Drawable\Text\TextScale.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrapper\QTarget.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <PackageReference Include="CitizenFX.Core.Client" Version="1.0.5392" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DiamondCrew.FiveM.Utils.Shared\DiamondCrew.FiveM.Utils.Shared.csproj">
+      <Project>{7821da91-68f1-4e4d-b9c8-47c471aa3298}</Project>
+      <Name>DiamondCrew.FiveM.Utils.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

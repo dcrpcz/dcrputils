@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DiamondCrew.FiveM.Utils.Server")]
-[assembly: AssemblyDescription("Utilities for easier FiveM Server development in C#.")]
+[assembly: AssemblyTitle("DiamondCrew.FiveM.Utils.Shared")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("DiamondCrew")]
-[assembly: AssemblyProduct("DiamondCrew.FiveM.Utils.Client")]
-[assembly: AssemblyCopyright("Copyright © DiamondCrew 2022")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("DiamondCrew.FiveM.Utils.Shared")]
+[assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6D03F18D-17CE-43F2-B0CE-69811BE8CDA9")]
+[assembly: Guid("7821DA91-68F1-4E4D-B9C8-47C471AA3298")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.4.0")]
-[assembly: AssemblyFileVersion("1.0.4.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
