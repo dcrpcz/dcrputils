@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>DiamondCrew.FiveM.Utils.Shared</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://diamondcrew.cz</projectUrl>
+    <repository type="git" url="https://github.com/dcrpcz/dcrputils" />
+    <description>$description$</description>
+    <copyright>$copyright$</copyright>
+    <tags>diamondcrew dcrp server</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5.2" />
+    </dependencies>
+  </metadata>
+</package>

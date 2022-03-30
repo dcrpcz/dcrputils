@@ -30,6 +30,15 @@ jobs:
         
       - name: pack & publish client
         run: |
+          cd DiamondCrew.FiveM.Utils.Shared
+          nuget pack -OutputFileNamesWithoutVersion
+          nuget push DiamondCrew.FiveM.Utils.Shared.nupkg -Source https://api.nuget.org/v3/index.json
+
+      - name: navigate to workspace
+        run: cd $GITHUB_WORKSPACE
+
+      - name: pack & publish client
+        run: |
           cd DiamondCrew.FiveM.Utils.Client
           nuget pack -OutputFileNamesWithoutVersion
           nuget push DiamondCrew.FiveM.Utils.Client.nupkg -Source https://api.nuget.org/v3/index.json

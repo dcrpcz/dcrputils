@@ -50,15 +50,10 @@
     <Compile Include="Drawable\Text\TextScale.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrapper\QTarget.cs" />
+    <Compile Include="..\DiamondCrew.FiveM.Utils.Shared\*.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CitizenFX.Core.Client" Version="1.0.5392" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DiamondCrew.FiveM.Utils.Shared\DiamondCrew.FiveM.Utils.Shared.csproj">
-      <Project>{7821da91-68f1-4e4d-b9c8-47c471aa3298}</Project>
-      <Name>DiamondCrew.FiveM.Utils.Shared</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
