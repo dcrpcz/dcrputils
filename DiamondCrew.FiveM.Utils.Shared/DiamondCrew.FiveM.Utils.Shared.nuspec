@@ -12,7 +12,7 @@
     <repository type="git" url="https://github.com/dcrpcz/dcrputils" />
     <description>$description$</description>
     <copyright>$copyright$</copyright>
-    <tags>diamondcrew dcrp server</tags>
+    <tags>diamondcrew dcrp shared</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.5.2" />
     </dependencies>
