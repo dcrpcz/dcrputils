@@ -28,7 +28,7 @@ jobs:
       - name: build solution
         run: msbuild.exe DCRPUtils.sln /p:configuration="Release"
         
-      - name: pack & publish client
+      - name: pack & publish shared
         run: |
           cd DiamondCrew.FiveM.Utils.Shared
           nuget pack -OutputFileNamesWithoutVersion
