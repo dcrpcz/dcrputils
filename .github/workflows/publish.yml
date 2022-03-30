@@ -29,6 +29,7 @@ jobs:
         run: msbuild.exe DCRPUtils.sln /p:configuration="Release"
         
       - name: pack & publish shared
+        if: "contains(github.event.commits[0].message, 'shared'"
         run: |
           cd DiamondCrew.FiveM.Utils.Shared
           nuget pack -OutputFileNamesWithoutVersion
@@ -38,6 +39,7 @@ jobs:
         run: cd $GITHUB_WORKSPACE
 
       - name: pack & publish client
+        if: "contains(github.event.commits[0].message, 'client'"
         run: |
           cd DiamondCrew.FiveM.Utils.Client
           nuget pack -OutputFileNamesWithoutVersion
@@ -47,6 +49,7 @@ jobs:
         run: cd $GITHUB_WORKSPACE
     
       - name: pack & publish server
+        if: "contains(github.event.commits[0].message, 'server'"
         run: |
           cd DiamondCrew.FiveM.Utils.Server
           nuget pack -OutputFileNamesWithoutVersion

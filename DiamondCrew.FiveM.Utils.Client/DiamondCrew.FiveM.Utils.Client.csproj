@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientScript.cs" />
+    <Compile Include="DCClientScript.cs" />
     <Compile Include="Drawable\Drawable.cs" />
     <Compile Include="Drawable\DrawableTask.cs" />
     <Compile Include="Drawable\Text\DrawableText.cs" />
