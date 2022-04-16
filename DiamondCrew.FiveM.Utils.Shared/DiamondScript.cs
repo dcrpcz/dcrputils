@@ -47,9 +47,19 @@ namespace DiamondCrew.FiveM.Utils.Shared
             return API.LoadResourceFile("configs", $"files/{resourceName}/server/{configName}");
         }
 
+        public string GetRawSharedConfig(string configName)
+        {
+            return API.LoadResourceFile("configs", $"files/{resourceName}/shared/{configName}");
+        }
+        
         public T GetConfig<T>(string configName)
         {
             return JsonConvert.DeserializeObject<T>(GetRawConfig(configName));
+        }
+
+        public T GetSharedConfig<T>(string configName)
+        {
+            return JsonConvert.DeserializeObject<T>(GetRawSharedConfig(configName));
         }
     }
 }
