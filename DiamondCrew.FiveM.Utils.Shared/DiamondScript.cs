@@ -9,7 +9,7 @@ namespace DiamondCrew.FiveM.Utils.Shared
     {
         public readonly string resourceName;
         private readonly ScriptType _scriptType;
-        
+
         protected DiamondScript(ScriptType type)
         {
             resourceName = API.GetCurrentResourceName();
@@ -20,6 +20,7 @@ namespace DiamondCrew.FiveM.Utils.Shared
         protected abstract void OnStart();
 
         protected abstract void OnStop();
+
         private void SetupListeners()
         {
             EventHandlers["onResourceStart"] += new Action<string>(startName =>
@@ -40,26 +41,12 @@ namespace DiamondCrew.FiveM.Utils.Shared
 
         public string GetRawConfig(string configName)
         {
-            if (_scriptType == ScriptType.Client)
-            {
-                return API.LoadResourceFile("configs", $"files/{resourceName}/client/{configName}");
-            }
-            return API.LoadResourceFile("configs", $"files/{resourceName}/server/{configName}");
+            return API.LoadResourceFile("configs", $"files/{resourceName}/{_scriptType.ToString().ToLower()}/{configName}");
         }
 
-        public string GetRawSharedConfig(string configName)
-        {
-            return API.LoadResourceFile("configs", $"files/{resourceName}/shared/{configName}");
-        }
-        
         public T GetConfig<T>(string configName)
         {
             return JsonConvert.DeserializeObject<T>(GetRawConfig(configName));
-        }
-
-        public T GetSharedConfig<T>(string configName)
-        {
-            return JsonConvert.DeserializeObject<T>(GetRawSharedConfig(configName));
         }
     }
 }

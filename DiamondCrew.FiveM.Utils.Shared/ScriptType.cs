@@ -2,6 +2,6 @@
 {
     public enum ScriptType
     {
-        Client, Server
+        Client, Server, Shared
     }
 }
