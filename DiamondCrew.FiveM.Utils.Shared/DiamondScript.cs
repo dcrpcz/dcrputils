@@ -38,7 +38,7 @@ namespace DiamondCrew.FiveM.Utils.Shared
             });
         }
 
-        public string getRawConfig(string configName)
+        public string GetRawConfig(string configName)
         {
             if (_scriptType == ScriptType.Client)
             {
@@ -47,9 +47,9 @@ namespace DiamondCrew.FiveM.Utils.Shared
             return API.LoadResourceFile("configs", $"files/{resourceName}/server/{configName}");
         }
 
-        public T getConfig<T>(string configName)
+        public T GetConfig<T>(string configName)
         {
-            return JsonConvert.DeserializeObject<T>(getRawConfig(configName));
+            return JsonConvert.DeserializeObject<T>(GetRawConfig(configName));
         }
     }
 }
